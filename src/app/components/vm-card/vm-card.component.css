@@ -1,0 +1,41 @@
+.button-row button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.button-success:enabled {
+    background-color: green;
+}
+
+.button-error:enabled {
+    background-color: red;
+}
+
+.button-warning:enabled {
+    background-color: #e57600;
+}
+
+.button-error:enabled {
+    background-color: red;
+}
+
+.vm-stop-icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+}
+
+
+.vm-run-icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: green;
+    border-radius: 50%;
+}
+
+.vm-list-element {
+    margin-bottom: 10px;
+}

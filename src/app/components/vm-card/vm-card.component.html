@@ -1,0 +1,45 @@
+<div class="vm-list-element">
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <mat-card-title>Виртуальная машина #{{ data().id }} | {{ data().name }}</mat-card-title>
+            <mat-card-subtitle>
+                @if (data().status == 'running') {
+                    <div class="vm-run-icon"></div>
+                    запущено
+                } @else {
+                    <div class="vm-stop-icon"></div>
+                    остановлено
+                }
+
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions align="end">
+            <div class="button-row">
+                <button
+                        mat-flat-button
+                        class="button-success"
+                        (click)="runVm(data().id)"
+                        [disabled]="data().status == 'running' ? true : null"
+                >Запуск</button>
+                <button
+                        mat-flat-button
+                        class="button-error"
+                        (click)="stopVm(data().id)"
+                        [disabled]="data().status == 'running' ? null : true"
+                >Остановка</button>
+                <button
+                        mat-flat-button
+                        class="button-warning"
+                        (click)="rebootVm(data().id)"
+                        [disabled]="data().status == 'running' ? null : true"
+                >Перезагрузка</button>
+                <button
+                        mat-flat-button
+                        class="button-warning"
+                        (click)="rebootVm(data().id)"
+                        [disabled]="data().status == 'running' ? null : true"
+                >Сброс</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</div>
