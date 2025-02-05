@@ -1,3 +1,21 @@
-@for (vm of this.vmList; track vm.id) {
+@if (!vmList) {
+    <mat-card>
+    </mat-card>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Произошла ошибка :(</mat-card-title>
+            <mat-card-subtitle>Не удалось получить список виртуальных машин</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                Возможно, API недоступен или проводятся технические работы на гипервизоре.<br>
+                В любом случае для начала следует подождать.<br>
+                Если ошибка не устранится сама по себе - свяжитесь с администратором
+            </p>
+        </mat-card-content>
+    </mat-card>
+}
+
+@for (vm of vmList; track vm.id) {
     <app-vm-card [data]="vm"/>
 }
